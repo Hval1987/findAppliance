@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<app:Appliance xmlns:app="http://myCriteria/applianc">
+<Appliance xmlns:app="http://myCriteria/appliance">
     <Ovens>
         <Oven id="1">
             <POWER_CONSUMPTION></POWER_CONSUMPTION>
@@ -171,5 +171,5 @@
     </SpeakersCommon>
 
 
-</app:Appliance>
+</Appliance>
 
