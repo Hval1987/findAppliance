@@ -63,7 +63,7 @@
                 <element name="WIDTH" type="int"/>
 
             </sequence>
-            <attribute name="id" type="int"  use="required"/>
+            <attribute name="id" type="ID"  use="required"/>
         </complexType>
     <complexType name="Laptop">
         <sequence>
@@ -74,7 +74,7 @@
             <element name="CPU" type="double"/>
             <element name="DISPLAY_INCHS" type="double"/>
         </sequence>
-        <attribute name="id" type="int"/>
+        <attribute name="id" type="ID"/>
     </complexType>
     <complexType name="Refrigerator">
         <sequence>
@@ -85,7 +85,7 @@
             <element name="HEIGHT" type="int"/>
             <element name="WIDTH" type="int"/>
         </sequence>
-        <attribute name="id" type="int" />
+        <attribute name="id" type="ID" />
     </complexType>
 
     <complexType name="VacuumCleaner" >
@@ -97,7 +97,7 @@
             <element name="MOTOR_SPEED_REGULATION" type="int"/>
             <element name="CLEANING_WIDTH" type="int"/>
         </sequence>
-        <attribute name="id" type="int" />
+        <attribute name="id" type="ID" />
     </complexType>
     <complexType name="TabletPC">
         <sequence>
@@ -107,7 +107,7 @@
             <element name="FLASH_MEMORY_CAPACITY" type="int"/>
             <element name="COLOR" type="int"/>
         </sequence>
-        <attribute name="id" type="int"/>
+        <attribute name="id" type="ID"/>
     </complexType>
     <complexType name="Speakers">
         <sequence>
@@ -116,7 +116,7 @@
             <element name="FREQUENCY_RANGE" type="int"/>
             <element name="CORD_LENGTH" type="double"/>
         </sequence>
-        <attribute name="id" type="int"/>
+        <attribute name="id" type="ID"/>
     </complexType>
 
 
