@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-        version="2.1">
+        targetNamespace="http://myCriteria/appliance/speakers"
+        xsi:noNamespaceSchemaLocation="Speakers.xsd">
 
-    <tlib-version>1.0</tlib-version>
-    <short-name>myshortname</short-name>
-    <uri>http://mycompany.com</uri>
-
-    <!-- Invoke 'Generate' action to add tags or functions -->
-
-</taglib>
+    <complexType name="Speakers">
+        <sequence>
+            <element name="POWER_CONSUMPTION" type="int"/>
+            <element name="NUMBER_OF_SPEAKERS" type="int"/>
+            <element name="FREQUENCY_RANGE" type="string"/>
+            <element name="CORD_LENGTH" type="double"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+    </complexType>
+</schema>

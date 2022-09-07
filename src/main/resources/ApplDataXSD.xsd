@@ -1,130 +1,80 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://myCriteria/appliance"
-        xmlns:app="http://myCriteria/appliance">
-    <element name="Appliance">
-        <complexType>
-            <sequence>
-                <element name="Ovens">
-                    <complexType>
-                        <sequence>
-                            <element name="Oven" type="app:Oven" minOccurs="1" maxOccurs="unbounded"/>
-                        </sequence>
-                    </complexType>
-                </element>
-                <element name="Laptops">
-                    <complexType>
-                        <sequence>
-                            <element name="Laptop" type="app:Laptop" minOccurs="1" maxOccurs="2"/>
-                        </sequence>
-                    </complexType>
-                </element>
-                <element name="Refrigerators">
-                    <complexType>
-                        <sequence>
-                            <element name="Refrigerator" type="app:Refrigerator" minOccurs="1" maxOccurs="unbounded"/>
-                        </sequence>
-                    </complexType>
-                </element>
-                <element name="VacuumCleaners">
-                    <complexType>
-                        <sequence>
-                        <element name="VacuumCleaner" type="app:VacuumCleaner" />
-                        </sequence>
-                    </complexType>
-                </element>
-                <element name="TabletPCes" >
-                    <complexType>
-                        <sequence>
-                            <element name="TabletPC" type="app:TabletPC"/>
-                        </sequence>
-                    </complexType>
-                </element>
-                <element name="SpeakersCommon">
-                    <complexType>
-                        <sequence>
-                            <element name="Speakers" type="app:Speakers"/>
-                        </sequence>
-                    </complexType>
-                </element>
-
-            </sequence>
-        </complexType>
-    </element>
-
-        <complexType name="Oven">
-            <sequence>
-                <element name="POWER_CONSUMPTION" type="int"/>
-                <element name="WEIGHT" type="int"/>
-                <element name="CAPACITY" type="int"/>
-                <element name="DEPTH" type="int"/>
-                <element name="HEIGHT" type="int"/>
-                <element name="WIDTH" type="int"/>
-
-            </sequence>
-            <attribute name="id" type="ID"  use="required"/>
-        </complexType>
-    <complexType name="Laptop">
-        <sequence>
-            <element name="BATTERY_CAPACITY" type="int"/>
-            <element name="OS" type="string"/>
-            <element name="MEMORY_ROM" type="int"/>
-            <element name="SYSTEM_MEMORY" type="int"/>
-            <element name="CPU" type="double"/>
-            <element name="DISPLAY_INCHS" type="double"/>
-        </sequence>
-        <attribute name="id" type="ID"/>
-    </complexType>
-    <complexType name="Refrigerator">
-        <sequence>
-            <element name="POWER_CONSUMPTION" type="int"/>
-            <element name="WEIGHT" type="int"/>
-            <element name="FREEZER_CAPACITY" type="int"/>
-            <element name="OVERALL_CAPACITY" type="int"/>
-            <element name="HEIGHT" type="int"/>
-            <element name="WIDTH" type="int"/>
-        </sequence>
-        <attribute name="id" type="ID" />
-    </complexType>
-
-    <complexType name="VacuumCleaner" >
-        <sequence>
-            <element name="POWER_CONSUMPTION" type="int"/>
-            <element name="FILTER_TYPE" type="string"/>
-            <element name="BAG_TYPE" type="string"/>
-            <element name="WAND_TYPE" type="string"/>
-            <element name="MOTOR_SPEED_REGULATION" type="int"/>
-            <element name="CLEANING_WIDTH" type="int"/>
-        </sequence>
-        <attribute name="id" type="ID" />
-    </complexType>
-    <complexType name="TabletPC">
-        <sequence>
-            <element name="BATTERY_CAPACITY" type="int"/>
-            <element name="DISPLAY_INCHES" type="double"/>
-            <element name="MEMORY_ROM" type="int"/>
-            <element name="FLASH_MEMORY_CAPACITY" type="int"/>
-            <element name="COLOR" type="int"/>
-        </sequence>
-        <attribute name="id" type="ID"/>
-    </complexType>
-    <complexType name="Speakers">
-        <sequence>
-            <element name="POWER_CONSUMPTION" type="int"/>
-            <element name="NUMBER_OF_SPEAKERS" type="int"/>
-            <element name="FREQUENCY_RANGE" type="int"/>
-            <element name="CORD_LENGTH" type="double"/>
-        </sequence>
-        <attribute name="id" type="ID"/>
-    </complexType>
+<app:schema xmlns:app="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://myCriteria/appliance"
+            targetNamespace="http://myCriteria/appliance"
 
 
+        xmlns:ovn="http://myCriteria/appliance/oven"
+        xmlns:lpt="http://myCriteria/appliance/laptop"
+        xmlns:rfr="http://myCriteria/appliance/refrigerator"
+        xmlns:vccl="http://myCriteria/appliance/vacuumCleaner"
+        xmlns:tb="http://myCriteria/appliance/tabletPC"
+        xmlns:spc="http://myCriteria/appliance/speakers"
+        elementFormDefault="qualified">
 
+    <app:import namespace="http://myCriteria/appliance/oven"
+            schemaLocation="Oven.xsd"/>
+    <app:import namespace="Laptop.xsd"
+            schemaLocation="Laptop.xsd"/>
+    <app:import namespace="http://myCriteria/appliance/refrigerator"
+            schemaLocation="Refrigerator.xsd"/>
+    <app:import namespace="http://myCriteria/appliance/vacuumCleaner"
+            schemaLocation="VacuumCleaner.xsd"/>
+    <app:import namespace="http://myCriteria/appliance/tabletPC"
+            schemaLocation="TabletPC.xsd"/>
+    <app:import namespace="http://myCriteria/appliance/tabletPC"
+            schemaLocation="Speakers.xsd"/>
 
+    <app:element name="Appliance">
+        <app:complexType>
+            <app:sequence>
+                <app:element name="Ovens">
+                    <app:complexType>
+                        <app:sequence>
+                            <app:element name="Oven" type="ovn:Oven" minOccurs="1" maxOccurs="unbounded"/>
+                        </app:sequence>
+                    </app:complexType>
+                </app:element>
+                <app:element name="Laptops">
+                    <app:complexType>
+                        <app:sequence>
+                            <app:element name="Laptop" type="lpt:Laptop" minOccurs="1" maxOccurs="unbounded"/>
+                        </app:sequence>
+                    </app:complexType>
+                </app:element>
+                <app:element name="Refrigerators">
+                    <app:complexType>
+                        <app:sequence>
+                            <app:element name="Refrigerator" type="rfr:Refrigerator" minOccurs="1" maxOccurs="unbounded"/>
+                        </app:sequence>
+                    </app:complexType>
+                </app:element>
+                <app:element name="VacuumCleaners">
+                    <app:complexType>
+                        <app:sequence>
+                            <app:element name="VacuumCleaner" type="vccl:VacuumCleaner" minOccurs="1"
+                                     maxOccurs="unbounded"/>
+                        </app:sequence>
+                    </app:complexType>
+                </app:element>
+                <app:element name="TabletPCes">
+                    <app:complexType>
+                        <app:sequence>
+                            <app:element name="TabletPC" type="tb:TabletPC" minOccurs="1" maxOccurs="unbounded"/>
+                        </app:sequence>
+                    </app:complexType>
+                </app:element>
+                <app:element name="SpeakersCommon">
+                    <app:complexType>
+                        <app:sequence>
+                            <app:element name="Speakers" type="spc:Speakers" minOccurs="1" maxOccurs="unbounded"/>
+                        </app:sequence>
+                    </app:complexType>
+                </app:element>
 
+            </app:sequence>
+        </app:complexType>
+    </app:element>
 
-
-
-    
-</schema>
+</app:schema>

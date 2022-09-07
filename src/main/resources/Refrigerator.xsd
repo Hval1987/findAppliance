@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-        version="2.1">
+        targetNamespace="http://myCriteria/appliance/refrigerator"
+        xsi:schemaLocation="http://myCriteria/appliance/refrigerator"
+        >
+        <complexType name="Refrigerator">
+                <sequence>
+                        <element name="POWER_CONSUMPTION" type="int"/>
+                        <element name="WEIGHT" type="int"/>
+                        <element name="FREEZER_CAPACITY" type="int"/>
+                        <element name="OVERALL_CAPACITY" type="double"/>
+                        <element name="HEIGHT" type="int"/>
+                        <element name="WIDTH" type="int"/>
+                </sequence>
+                <attribute name="id" type="int" />
+        </complexType>
 
-    <tlib-version>1.0</tlib-version>
-    <short-name>myshortname</short-name>
-    <uri>http://mycompany.com</uri>
 
-    <!-- Invoke 'Generate' action to add tags or functions -->
-
-</taglib>
+</schema>

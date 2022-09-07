@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<taglib xmlns="http://java.sun.com/xml/ns/javaee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-        version="2.1">
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://myCriteria/appliance/oven"
+        xmlns:ovn="http://myCriteria/appliance/oven"
+        elementFormDefault="unqualified">
+    <complexType name="Oven">
+        <sequence>
+            <element name="POWER_CONSUMPTION" type="int"/>
+            <element name="WEIGHT" type="int"/>
+            <element name="CAPACITY" type="int"/>
+            <element name="DEPTH" type="int"/>
+            <element name="HEIGHT" type="int"/>
+            <element name="WIDTH" type="double"/>
 
-    <tlib-version>1.0</tlib-version>
-    <short-name>myshortname</short-name>
-    <uri>http://mycompany.com</uri>
+        </sequence>
+        <attribute name="id" type="int" use="required"/>
+    </complexType>
 
-    <!-- Invoke 'Generate' action to add tags or functions -->
 
-</taglib>
+</schema>

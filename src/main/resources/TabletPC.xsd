@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-        version="2.1">
+        targetNamespace ="http://myCriteria/appliance/tabletPC"
+        xsi:xmlns="http://myCriteria/appliance/tabletPC">
 
-    <tlib-version>1.0</tlib-version>
-    <short-name>myshortname</short-name>
-    <uri>http://mycompany.com</uri>
-
-    <!-- Invoke 'Generate' action to add tags or functions -->
-
-</taglib>
+    <complexType name="TabletPC">
+        <sequence>
+            <element name="BATTERY_CAPACITY" type="int"/>
+            <element name="DISPLAY_INCHES" type="double"/>
+            <element name="MEMORY_ROM" type="int"/>
+            <element name="FLASH_MEMORY_CAPACITY" type="int"/>
+            <element name="COLOR" type="string"/>
+        </sequence>
+        <attribute name="id" type="int"/>
+    </complexType>
+</schema>
