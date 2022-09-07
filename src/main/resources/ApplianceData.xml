@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<Appliance xmlns:app="http://myCriteria/appliance">
+<Appliance >
     <Ovens>
         <Oven id="1">
             <POWER_CONSUMPTION></POWER_CONSUMPTION>
