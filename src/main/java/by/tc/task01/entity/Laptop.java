@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Laptop extends Appliance implements Serializable {
+    private int id;
 	private int batteryCapacity;
 	private String os;
 	private int memoryRom;
@@ -12,6 +13,14 @@ public class Laptop extends Appliance implements Serializable {
 	private double displayInch;
 
     public Laptop() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getBatteryCapacity() {

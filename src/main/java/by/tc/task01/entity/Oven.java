@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Oven extends Appliance implements Serializable {
+    private int id;
 	private int powerConsumption;
 	private int weight;
 	private int capasity;
@@ -11,6 +12,14 @@ public class Oven extends Appliance implements Serializable {
 	private int height;
 	private int width;
 	public Oven(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getPowerConsumption() {
         return powerConsumption;
