@@ -18,8 +18,8 @@ public class Criteria {
         parametr.put(key,value);
     }
     public Set<Map.Entry<String,String>> getKeyValue(String key){
-        Set<Map.Entry<String,String>> value=parametr.entrySet();
-        return value;
+        Set<Map.Entry<String,String>> keyValue=parametr.entrySet();
+        return keyValue;
     }
     public Collection<String> getValueByKey(String key){
         return  parametr.values();
