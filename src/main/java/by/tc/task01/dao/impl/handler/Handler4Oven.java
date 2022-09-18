@@ -1,6 +1,7 @@
 package by.tc.task01.dao.impl.handler;
 
 import by.tc.task01.dao.Parametr;
+import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.Oven;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 public class Handler4Oven extends DefaultHandler {
-    ArrayList<Oven> list = new ArrayList<Oven>();
+    ArrayList<Appliance> list = new ArrayList<by.tc.task01.entity.Appliance>();
     Oven ovn;
     StringBuilder text = new StringBuilder();
 
@@ -65,7 +66,7 @@ public class Handler4Oven extends DefaultHandler {
                 break;
         }
     }
-    public List<Oven> getOvenList(){
+    public List<Appliance> getOvenList(){
         return list;
     }
 }

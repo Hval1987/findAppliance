@@ -1,9 +1,9 @@
-package by.tc.task01.dao;
+package by.tc.task01.service;
 
 import java.util.*;
 
 public class Criteria {
-    final static String TYPE_OF_APPLIANCE="type"
+    final static String TYPE_OF_APPLIANCE="type";
     Map<String,String> parametr;
 
 

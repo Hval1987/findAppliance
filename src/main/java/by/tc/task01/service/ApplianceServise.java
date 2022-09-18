@@ -1,4 +1,7 @@
 package by.tc.task01.service;
 
-public interface OvenServise {
+import by.tc.task01.entity.Appliance;
+
+public interface ApplianceServise {
+    Appliance findApplianceByCriteria(Criteria criteria);
 }
