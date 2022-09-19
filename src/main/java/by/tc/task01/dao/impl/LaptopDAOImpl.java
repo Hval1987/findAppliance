@@ -1,6 +1,5 @@
 package by.tc.task01.dao.impl;
 
-import by.tc.task01.dao.LaptopDAO;
 import by.tc.task01.dao.impl.handler.Handler4Laptop;
 import by.tc.task01.entity.Laptop;
 import org.xml.sax.SAXException;
