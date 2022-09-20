@@ -63,6 +63,7 @@ public class Handler4Laptop extends DefaultHandler {
         }
     }
     public List<Laptop> getLaptopList(){
+        
         return list;
     }
 

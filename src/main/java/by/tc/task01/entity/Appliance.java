@@ -1,8 +1,12 @@
 package by.tc.task01.entity;
 
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
-public class Appliance {
+public  class Appliance {
 	private int price;
 
     public Appliance() {
@@ -35,4 +39,6 @@ public class Appliance {
                 "price=" + price +
                 '}';
     }
+
+
 }
