@@ -36,9 +36,14 @@ public class Handler4Laptop extends DefaultHandler {
     }
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        String param=qName.replace("-","");
+        String param=qName.replace("-","").toUpperCase();
+        System.out.println(param);
+
         switch (Parametr.valueOf(param)){
-            case BATERYCAPASITY:
+
+
+            case BATTERYCAPACITY:
+                System.out.println();
                 laptop.setBatteryCapacity(Integer.parseInt(text.toString()));
                 break;
             case OS:

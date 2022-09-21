@@ -9,8 +9,8 @@ public class Oven extends Appliance implements Serializable {
 	private int weight;
 	private int capasity;
 	private int dept;
-	private int height;
-	private int width;
+	private double height;
+	private double width;
 	public Oven(){}
 
     public int getId() {
@@ -53,19 +53,19 @@ public class Oven extends Appliance implements Serializable {
         this.dept = dept;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 

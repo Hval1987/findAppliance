@@ -1,13 +1,12 @@
 package by.tc.task01.dao.impl;
 
-import by.tc.task01.dao.impl.handler.Handler4Laptop;
+import by.tc.task01.dao.impl.handler.SAXParser;
 import by.tc.task01.entity.Appliance;
-import by.tc.task01.entity.Laptop;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
@@ -20,18 +19,19 @@ public class LaptopDAOImpl extends Appliance {
 
 
     SAXParserFactory factory = SAXParserFactory.newInstance();
-    SAXParser parser = factory.newSAXParser();
+    javax.xml.parsers.SAXParser parser = factory.newSAXParser();
     XMLReader reader = parser.getXMLReader();
-    Handler4Laptop handler = new Handler4Laptop();
+    SAXParser handler = new SAXParser();
+
 
     public LaptopDAOImpl() throws ParserConfigurationException, SAXException {
     }
 
 
-    public List<Laptop> findAll() throws IOException, SAXException {
-
-        reader.parse(source);
-        List<Laptop> list = handler.getLaptopList();
+    public List<Appliance> findAll() throws IOException, SAXException {
+reader.setContentHandler(handler);
+        reader.parse(new InputSource(source));
+        List<Appliance> list = handler.getOvenList();
 
         System.out.println(list);
         return list;
